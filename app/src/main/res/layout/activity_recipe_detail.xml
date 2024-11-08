@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@android:color/white">
+
+    <!-- Recipe Title -->
+    <TextView
+        android:id="@+id/recipeTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Recipe Title"
+        android:textSize="24sp"
+        android:textColor="#333333"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"
+        android:ellipsize="end"
+        android:maxLines="2" />
+
+    <!-- Recipe Image -->
+    <ImageView
+        android:id="@+id/recipeImage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/default_image"
+        android:scaleType="centerCrop" />
+
+    <!-- Recipe Description -->
+    <TextView
+        android:id="@+id/recipeDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Recipe Description"
+        android:textSize="18sp"
+        android:textColor="#666666"
+        android:layout_marginBottom="16dp"
+        android:maxLines="4"
+        android:ellipsize="end" />
+
+    <!-- Health Score -->
+    <TextView
+        android:id="@+id/healthScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Health Score: 0"
+        android:textColor="#00796B"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Dietary Information -->
+    <TextView
+        android:id="@+id/dietInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dietary Info: "
+        android:textSize="16sp"
+        android:textColor="#00796B"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Preparation Time -->
+    <TextView
+        android:id="@+id/preparationTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Preparation Time: 0 minutes"
+        android:textSize="16sp"
+        android:textColor="#00796B"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Servings -->
+    <TextView
+        android:id="@+id/servings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Servings: 0"
+        android:textSize="16sp"
+        android:textColor="#00796B"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Source URL -->
+    <TextView
+        android:id="@+id/sourceUrl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Source: "
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_gravity="start" />
+
+</LinearLayout>
