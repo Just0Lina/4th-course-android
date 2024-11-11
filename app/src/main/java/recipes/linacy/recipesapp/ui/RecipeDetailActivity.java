@@ -48,7 +48,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
 
     private void loadRecipeDetails(int recipeId) {
         RecipeApi recipeApi = RetrofitClient.getInstance().create(RecipeApi.class);
-        Call<RecipeDetails> call = recipeApi.getRecipeDetails( recipeId, "663aa51f0aa54f61ab6726779af1db6f",true);
+        Call<RecipeDetails> call = recipeApi.getRecipeDetails( recipeId, "",true);
 
         call.enqueue(new Callback<RecipeDetails>() {
             @Override
