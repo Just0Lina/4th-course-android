@@ -1,96 +1,246 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:background="@android:color/white">
+    android:layout_height="match_parent">
 
-    <!-- Recipe Title -->
-    <TextView
-        android:id="@+id/recipeTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Recipe Title"
-        android:textSize="24sp"
-        android:textColor="#333333"
-        android:textStyle="bold"
-        android:layout_marginBottom="8dp"
-        android:ellipsize="end"
-        android:maxLines="2" />
-
-    <!-- Recipe Image -->
     <ImageView
         android:id="@+id/recipeImage"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginBottom="16dp"
-        android:src="@drawable/default_image"
-        android:scaleType="centerCrop" />
+        android:layout_height="500dp"
+        android:layout_alignParentTop="true"
+        android:contentDescription="Recipe Image"
+        android:scaleType="centerCrop"
+        android:src="@drawable/default_image" />
 
-    <!-- Recipe Description -->
-    <TextView
-        android:id="@+id/recipeDescription"
+    <ImageButton
+        android:id="@+id/closeButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="16dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="Close Button"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_close" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollViewRecipeDescription"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Recipe Description"
-        android:textSize="18sp"
-        android:textColor="#666666"
-        android:layout_marginBottom="16dp"
-        android:maxLines="4"
-        android:ellipsize="end" />
+        android:layout_height="match_parent">
 
-    <!-- Health Score -->
-    <TextView
-        android:id="@+id/healthScore"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Health Score: 0"
-        android:textColor="#00796B"
-        android:textSize="16sp"
-        android:layout_marginBottom="8dp" />
+        <LinearLayout
+            android:id="@+id/cardLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="250dp"
+            android:background="@drawable/rounded_card_background"
+            android:elevation="4dp"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-    <!-- Dietary Information -->
-    <TextView
-        android:id="@+id/dietInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Dietary Info: "
-        android:textSize="16sp"
-        android:textColor="#00796B"
-        android:layout_marginBottom="8dp" />
+            <TextView
+                android:id="@+id/recipeTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="Recipe Title"
+                android:textColor="#333333"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
-    <!-- Preparation Time -->
-    <TextView
-        android:id="@+id/preparationTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Preparation Time: 0 minutes"
-        android:textSize="16sp"
-        android:textColor="#00796B"
-        android:layout_marginBottom="8dp" />
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/scrollViewRecipeDescription2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
 
-    <!-- Servings -->
-    <TextView
-        android:id="@+id/servings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Servings: 0"
-        android:textSize="16sp"
-        android:textColor="#00796B"
-        android:layout_marginBottom="16dp" />
+                <TextView
+                    android:id="@+id/recipeDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/viewMoreButton"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/sofia_sans"
+                    android:maxLines="2"
+                    android:text="Recipe Description"
+                    android:textColor="#666666"
+                    android:textSize="18sp" />
+            </androidx.core.widget.NestedScrollView>
 
-    <!-- Source URL -->
-    <TextView
-        android:id="@+id/sourceUrl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Source: "
-        android:textColor="@android:color/holo_blue_dark"
-        android:textSize="16sp"
-        android:layout_marginBottom="8dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:layout_gravity="start" />
+            <Button
+                android:id="@+id/viewMoreButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/sofia_sans"
+                android:text="View More"
+                android:textColor="@color/black"
+                android:textSize="11sp" />
 
-</LinearLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="6dp"
+                android:stretchColumns="1">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="start|center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="start|center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginEnd="8dp"
+                            android:contentDescription="Carbs Icon"
+                            android:src="@drawable/ic_carbs" />
+
+                        <TextView
+                            android:id="@+id/carbValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Carbs: 0g"
+                            android:textColor="#00796B"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="start|center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginEnd="8dp"
+                            android:contentDescription="Fats Icon"
+                            android:src="@drawable/ic_fats" />
+
+                        <TextView
+                            android:id="@+id/fatValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fats: 0g"
+                            android:textColor="#00796B"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="start|center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginEnd="8dp"
+                            android:contentDescription="Proteins Icon"
+                            android:src="@drawable/ic_proteins" />
+
+                        <TextView
+                            android:id="@+id/proteinValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Proteins: 0g"
+                            android:textColor="#00796B"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="start|center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginEnd="8dp"
+                            android:contentDescription="Calories Icon"
+                            android:src="@drawable/ic_calories" />
+
+                        <TextView
+                            android:id="@+id/caloriesValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Calories: 0 kcal"
+                            android:textColor="#00796B"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                </TableRow>
+            </TableLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/buttonOption1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#042628"
+                        android:text="Ingredients"
+                        android:textColor="#FFFFFF" />
+
+                    <Button
+                        android:id="@+id/buttonOption2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:backgroundTint="#E6EBF2"
+                        android:text="Instructions"
+                        android:textColor="#042628" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp" />
+
+                <LinearLayout
+                    android:id="@+id/contentContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

@@ -151,7 +151,6 @@
     </FrameLayout>
 
 
-    <!-- Center Text for the tagline -->
     <TextView
         android:id="@+id/taglineText"
         android:layout_width="wrap_content"

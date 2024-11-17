@@ -35,10 +35,6 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
         View view = LayoutInflater.from(context).inflate(R.layout.item_layout_for_view, parent, false);
         return new ViewHolder(view);
     }
-    public interface OnItemClickListener {
-        void onItemClicked(Recipe recipe);
-    }
-
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {

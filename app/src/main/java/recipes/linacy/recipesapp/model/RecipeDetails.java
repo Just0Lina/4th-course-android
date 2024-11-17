@@ -13,13 +13,15 @@ public class RecipeDetails {
     private String image;
     private String imageType;
     private String summary;
+
     private int servings;
     private int readyInMinutes;
-    private String sourceUrl;
+    private String additionalInfo;
     private String healthScore;
     private List<String> diets;
     private List<String> dishTypes;
     private List<Ingredient> extendedIngredients;
     private String instructions;
     private List<Step> analyzedInstructions;
-    }
+
+}
