@@ -50,18 +50,19 @@ RecipeApp — это Android-приложение на Java, которое по
 ## Скриншоты
 
 *Добавьте сюда скриншоты приложения для иллюстрации интерфейса.*
-
 ## Скриншоты
 
-![](misc/imgs/welcome_page.png)
-
-![W](misc/imgs/main.png)
-
-![](misc/imgs/detailed.png)
+<p align="center">
+  <img src="misc/imgs/welcome_page.png" alt="Welcome Page" width="200"/>
+  <img src="misc/imgs/main.png" alt="Main Screen" width="200"/>
+  <img src="misc/imgs/detailed.png" alt="Detailed View" width="200"/>
+</p>
 
 ## Видео-демонстрация
 
-![Watch the video](misc/gifs/demo.gif)
+<p align="center">
+      <img src="misc/gifs/demo.gif" alt="Main Screen" width="400"/>
+</p>
 
 ## Требования
 
